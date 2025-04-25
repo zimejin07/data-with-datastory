@@ -8,13 +8,14 @@ import MeasureSelector from "./components/MeasureSelector";
 import Chart from "./components/Chart";
 
 export default function Home() {
-    const { countries, loading: countriesLoading } = useCountries();
+    const { countries, loading: countriesLoading, error: countriesError  } = useCountries();
     const [selectedCountry, setSelectedCountry] = useState<string>("Poland");
     const [selectedMeasure, setSelectedMeasure] = useState<string>("life_expectancy");
 
-    const { cubeData, loading: cubeDataLoading } = useCubeData(selectedCountry.toLowerCase(), selectedMeasure);
+    const { cubeData, loading: cubeDataLoading, error: cubeDataError } = useCubeData(selectedCountry.toLowerCase(), selectedMeasure);
 
     if (countriesLoading) return <div>Loading countries...</div>;
+    if (countriesError) return <div>Failed to load countries.</div>;
 
     return (
         <main className="flex flex-col items-center justify-center p-8">
@@ -22,7 +23,14 @@ export default function Home() {
                 <CountrySelector countries={countries} selected={selectedCountry} onSelect={setSelectedCountry} />
                 <MeasureSelector selected={selectedMeasure} onSelect={setSelectedMeasure} />
             </div>
-            {cubeDataLoading ? <div>Loading data...</div> : <Chart data={cubeData} />}
+            {cubeDataLoading && <div>Loading data...</div>}
+            {cubeDataError && <div>Failed to load data for {selectedCountry}.</div>}
+            {!cubeDataLoading && !cubeDataError && cubeData.length === 0 && (
+                <div>No data available for {selectedCountry} and {selectedMeasure}.</div>
+            )}
+            {!cubeDataLoading && !cubeDataError && cubeData.length > 0 && (
+                <Chart data={cubeData} />
+            )}
         </main>
     );
 }
