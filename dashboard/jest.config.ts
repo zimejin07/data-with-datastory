@@ -2,6 +2,7 @@ export default {
     transform: {
         "^.+\\.(ts|tsx)$": "babel-jest",
     },
-    testEnvironment: "jsdom",
+    testEnvironment: "jest-environment-jsdom",
     moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
+    setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
 };
