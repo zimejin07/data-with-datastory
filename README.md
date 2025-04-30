@@ -4,7 +4,7 @@
 
 ## 📜 Project Description
 
-This is a simple, clean dashboard built with **Next.js 14 (App Router)**, **TypeScript**, **Tailwind CSS**, **Apollo GraphQL Client**, and **D3.js** for data visualization.  
+This is a simple, clean dashboard built with **Next.js 15 (App Router)**, **TypeScript**, **Tailwind CSS**, **Apollo GraphQL Client**, and **D3.js** for data visualization.  
 The dashboard displays country profiles and allows users to switch between different countries and supported measures (Life Expectancy, Population, Net Migration Rate).
 
 ---
