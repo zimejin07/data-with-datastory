@@ -25,7 +25,7 @@ The dashboard displays country profiles and allows users to switch between diffe
 ## 🚫 What was not implemented (and why)
 
 - Full **E2E (end-to-end) testing** with Cypress or Playwright
-  > Reason: Given the 2-hour time limit, the focus was on core functionality and unit testing first.
+  > Reason: Given the 2-hour time limit I dedicated to this app, the focus was on core functionality and unit testing first.
 
 - Advanced D3 interactions (e.g., zoom, tooltip)
   > Reason: Basic charting was prioritized to ensure solid core data visualization first.
