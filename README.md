@@ -11,7 +11,7 @@ The dashboard displays country profiles and allows users to switch between diffe
 
 ## ✅ What was implemented
 
-- [x] Full project setup using **Next.js 14** with App Router
+- [x] Full project setup using **Next.js 15** with App Router
 - [x] GraphQL Apollo Client setup with queries to Datastory API
 - [x] Fetch and display **countries** and **measures** dynamically
 - [x] **D3.js line chart** for data visualization
